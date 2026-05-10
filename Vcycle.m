@@ -21,7 +21,12 @@ function x = Vcycle(level, A_list, R_list, b, x0, direct_n, weight, pre_smooth, 
 	if (n <= direct_n)
 		x = A \ b;
 		return;
-	end
+    end
+
+    x = x0
+
+    w = 2/3;
+    D = diag(A);
 
 	% Pre-smoothing
 	for i = 1:pre_smooth
